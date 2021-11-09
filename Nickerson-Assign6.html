@@ -1,0 +1,58 @@
+<!--
+    Travis Nickerson
+    CSD 360
+    September 10th, 2021
+    Assignment 6
+    Goal: create a for loop and write to the DOM the first 30 numbers in the fibonacci sequence
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 6</title>
+
+</head>
+<body>
+    <h1>The First 30 Fibonacci Sequence</h1>
+    <button id="btn">Run Fibonacci Sequence</button>
+    <div id ="fibDisplay"></div>
+    <!-- Declaring our Variables-->
+    <script>
+        var firstVar = 1;
+        var firstPlaceOrder = "1 - ";
+        var secondVar = 1;
+        var secondPlaceOrder = "2 - "
+        var counter = 3;
+        var fib;
+
+        // Creating an eventlistener for our button that will run our function when clicked
+        document.getElementById("btn").addEventListener("click", runFib);
+
+        // Function for running the Fibonacci sequence
+        function runFib () {
+
+            // writing straight to the document the first two numbers in the sequence
+            document.write(firstPlaceOrder + firstVar);
+            document.write("<br>");
+            document.write(secondPlaceOrder + secondVar)
+            document.write("<br>");
+        
+            // for loop that starts at the 3rd number in the sequence
+            for (counter; counter <= 30; counter++) {
+                fib = firstVar + secondVar;
+                firstVar = secondVar;
+                secondVar = fib;
+                document.write(counter + " - " + fib);
+                document.write("<br>");
+            }
+        }
+
+
+        
+        </script>
+    
+    
+</body>
+</html>

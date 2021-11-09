@@ -1,0 +1,67 @@
+<!--
+    Travis Nickerson
+    CSD 360
+    September 3, 2021
+    Assignment 5
+    Goal: Create a switch statement to return new values of snake eyes (total 2), box cars (total 12) and you 
+    win (total 7 or 11).
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 5</title>
+</head>
+<body>
+    <script type = "text/javascript">
+        /* Roll Dice Function*/
+        function rollDice(){
+        /* Dice 1 value */
+        document.form1.dice1.value = Math.floor((Math.random() * 6) + 1);
+        /* Dice 2 value */
+        document.form1.dice2.value = Math.floor((Math.random() * 6) + 1);
+        /* Setting total for dice 1 and 2 */
+        document.form1.total.value = parseInt(document.form1.dice1.value) +
+        parseInt(document.form1.dice2.value);
+        /* Storing total variable */
+        var total = parseInt(document.form1.dice1.value) +
+        parseInt(document.form1.dice2.value);
+
+        /* Switch statement for new values */
+        switch(total){ 
+            case 2:
+                document.form1.total.value = "Snake Eyes";
+                break;
+            case 7:
+            case 11:
+                document.form1.total.value = "You Win";
+                break;
+            case 12:
+                document.form1.total.value = "Box Cars";
+                break;
+            default:
+                document.form1.total.value = total;
+                break;
+        }
+        }
+       </script>
+       <form name='form1'>
+        <table border='1'>
+        <tr>
+        <td> Dice 1 </td>
+        <td> <input type='text' name='dice1' /> </td>
+        <td> Dice 2 </td>
+        <td> <input type='text' name='dice2' /> </td>
+        <td> <input type='button' name='button1' onclick='rollDice()' value=' Roll Dice ' /> </td>
+        <td> Total </td>
+        <td> <input type='text' name='total' /> </td>
+        </tr>
+        </table>
+        <input type='button' name='button5' value='Reset' onclick='reset()' />
+       </form>
+    
+</body>
+</html>

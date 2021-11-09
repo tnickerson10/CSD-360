@@ -1,0 +1,34 @@
+h1 {
+    text-align: center;
+}
+table {
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+height: 85vh;
+box-shadow: 5px 5px 15px gray;
+}
+td, th {
+border: 1px solid #dddddd;
+text-align: center;
+padding: 8px;
+}
+tr:nth-child(even) {
+background-color: #dddddd;
+}
+button {
+    padding: 5px;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px gray;
+}
+button:hover {
+    background-color: #dddddd;
+    cursor: pointer;
+}
+.b1 {
+    border: none;
+    background-color: white;
+    margin: 0px;
+}
